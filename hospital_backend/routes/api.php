@@ -49,3 +49,12 @@ Route::get('/appointmentsPatient/{id}', [AppointmentController::class, 'showPati
 Route::post('/addAppointments', [AppointmentController::class, 'store']);
 Route::put('/appointments/{id}', [AppointmentController::class, 'update']);
 Route::delete('/removeAppointments/{id}', [AppointmentController::class, 'destroy']);
+
+// For medical record api end points
+Route::get('/medical_records', [MedicalRecordController::class, 'index']);
+Route::get('/medical_records/{id}', [MedicalRecordController::class, 'show']);
+Route::get('/medical_recordsDoctor/{id}', [MedicalRecordController::class, 'showDoctor']);
+Route::get('/medical_recordsPatients/{id}', [MedicalRecordController::class, 'showPatients']);
+Route::post('/addMedicalRecords', [MedicalRecordController::class, 'store']);
+Route::put('/medicalRecords/{id}', [MedicalRecordController::class, 'update']);
+Route::delete('/removeMedicalRecords/{id}', [MedicalRecordController::class, 'destroy']);

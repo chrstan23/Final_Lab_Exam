@@ -29,5 +29,16 @@ class RecordSeeder extends Seeder
                 'notes' => 'Notes ' . $i,
             ]);
         }
+
+        // Create 10 appointments associated with the doctor and patient
+        for ($i = 1; $i <= 10; $i++) {
+            Appointment::create([
+                'patient_id' => $patient->id,
+                'doctor_id' => $doctor->id,
+                'appointment_date' => now()->addDays(rand(1, 30))->setHour(rand(8, 17))->setMinute(0), // Random appointment date within the next 30 days, setHour is used to randomize the hour of the day
+                'status' => 'scheduled',
+                'reason' => 'Reason for Appointment ' . $i,
+            ]);
+        }
     }
 }
