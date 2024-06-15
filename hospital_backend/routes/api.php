@@ -40,3 +40,12 @@ Route::get('/doctorsEmail/{email}', [DoctorController::class, 'showEmail']);
 Route::post('/addDoctors', [DoctorController::class, 'store']);
 Route::put('/doctors/{id}', [DoctorController::class, 'update']);
 Route::delete('/removeDoctor/{id}', [DoctorController::class, 'destroy']);
+
+// For appointment record api end points
+Route::get('/appointments', [AppointmentController::class, 'index']);
+Route::get('/appointments/{id}', [AppointmentController::class, 'show']);
+Route::get('/appointmentsDoctor/{id}', [AppointmentController::class, 'showDoctor']);
+Route::get('/appointmentsPatient/{id}', [AppointmentController::class, 'showPatients']);
+Route::post('/addAppointments', [AppointmentController::class, 'store']);
+Route::put('/appointments/{id}', [AppointmentController::class, 'update']);
+Route::delete('/removeAppointments/{id}', [AppointmentController::class, 'destroy']);
