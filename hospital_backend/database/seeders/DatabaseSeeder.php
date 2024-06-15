@@ -51,5 +51,18 @@ class DatabaseSeeder extends Seeder
         }
     }
 
-    
+    private function createPatientForUser(User $user)
+    {
+        Patient::create([
+            'first_name' => 'Patient',
+            'last_name' => 'May',
+            'date_of_birth' => '1990-01-01',
+            'gender' => 'Male',
+            'address' => '123 Street, City',
+            'phone' => '987654321',
+            'email' => $user->email,
+            'emergency_contact' => 'Emergency Contact Info',
+            'medical_history' => 'Medical History Info',
+        ]);
+    }
 }

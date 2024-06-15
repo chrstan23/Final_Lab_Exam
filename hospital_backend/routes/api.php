@@ -24,3 +24,11 @@ Route::post('/login', [UserController::class, 'login']);
 Route::middleware('auth:api')->group(function () {
     Route::post('/logout', [UserController::class, 'logout']);
 });
+
+// For patient api end points
+Route::get('/patients', [PatientController::class, 'index']);
+Route::get('/patients/{id}', [PatientController::class, 'show']);
+Route::get('/patientsEmail/{email}', [PatientController::class, 'showEmail']);
+Route::post('/addPatients', [PatientController::class, 'store']);
+Route::put('/patients/{id}', [PatientController::class, 'update']);
+Route::delete('/removePatient/{id}', [PatientController::class, 'destroy']);
