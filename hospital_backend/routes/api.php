@@ -32,3 +32,11 @@ Route::get('/patientsEmail/{email}', [PatientController::class, 'showEmail']);
 Route::post('/addPatients', [PatientController::class, 'store']);
 Route::put('/patients/{id}', [PatientController::class, 'update']);
 Route::delete('/removePatient/{id}', [PatientController::class, 'destroy']);
+
+// For doctor api end points
+Route::get('/doctors', [DoctorController::class, 'index']);
+Route::get('/doctors/{id}', [DoctorController::class, 'show']);
+Route::get('/doctorsEmail/{email}', [DoctorController::class, 'showEmail']);
+Route::post('/addDoctors', [DoctorController::class, 'store']);
+Route::put('/doctors/{id}', [DoctorController::class, 'update']);
+Route::delete('/removeDoctor/{id}', [DoctorController::class, 'destroy']);

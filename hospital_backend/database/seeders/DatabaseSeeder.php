@@ -65,4 +65,16 @@ class DatabaseSeeder extends Seeder
             'medical_history' => 'Medical History Info',
         ]);
     }
+
+    private function createDoctorForUser(User $user)
+    {
+        Doctor::create([
+            'first_name' => 'Doctor',
+            'last_name' => 'Juan',
+            'specialization' => 'General Medicine',
+            'license_number' => '12345',
+            'phone' => '123456789',
+            'email' => $user->email,
+        ]);
+    }
 }
